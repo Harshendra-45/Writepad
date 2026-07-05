@@ -9,4 +9,4 @@ def text_editor(window):
     wtext=Text(w_frame,font=("Helvetica",20),selectbackground="blue",selectforeground="yellow",undo=True,yscrollcommand=text_scroll.set)
     wtext.pack(side=LEFT, fill=BOTH, expand=True)
     text_scroll.config(command=wtext.yview)
-    
+    return wtext

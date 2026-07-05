@@ -9,3 +9,4 @@ def stat_bar(window):
         relief=SUNKEN
     )
     stat.pack(side=BOTTOM, fill=X)
+    return stat

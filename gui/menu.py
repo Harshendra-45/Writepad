@@ -1,17 +1,21 @@
 from tkinter import *
-def menu(name):
-    wpad_menu  = Menu(name)
-    name.config(menu=wpad_menu)
+from operations.new_file import new
+from operations.open_file import open_file
+from operations.saveas_file import save_current
+from operations.save_file import save_fill
+def menu(window,wtext,label):
+    wpad_menu  = Menu(window)
+    window.config(menu=wpad_menu)
 
     #Menu File item
     def new_command():
-        pass
+        new(window,wtext,label)
     def open_command():
-        pass
+        open_file(window,wtext,label)
     def save_command():
-        pass
+        save_fill(window,wtext,label)
     def saveas_command():
-        pass
+        save_current(window,wtext,label)
     file_menu=Menu(wpad_menu)
     wpad_menu.add_cascade(label="File",menu=file_menu)
     file_menu.add_command(label="New",command=new_command)

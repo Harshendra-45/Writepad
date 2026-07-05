@@ -1,7 +1,7 @@
 from tkinter import * 
-from menu import menu
-from text_editor import text_editor
-from statusbar import stat_bar
+from gui.menu import menu
+from gui.text_editor import text_editor
+from gui.statusbar import stat_bar
 def show_window(): 
     window = Tk()
     window.geometry("800x600")
@@ -12,12 +12,12 @@ def show_window():
     window.config(background='black')
     
     
-    menu(window)
-    stat_bar(window)
-    text_editor(window)   
+    label = stat_bar(window)
+    wtext = text_editor(window)    
+    menu(window,wtext,label)
     
 
 
     window.mainloop()
 
-show_window()
+
