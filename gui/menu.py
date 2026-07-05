@@ -3,6 +3,15 @@ from operations.new_file import new
 from operations.open_file import open_file
 from operations.saveas_file import save_current
 from operations.save_file import save_fill
+from operations.edit import (
+    undo,
+    redo,
+    cut,
+    copy,
+    paste,
+    select_all,
+    delete
+)
 def menu(window,wtext,label):
     wpad_menu  = Menu(window)
     window.config(menu=wpad_menu)
@@ -28,15 +37,15 @@ def menu(window,wtext,label):
 
     #Menu edit item
     def undo_command():
-        pass
+         undo(wtext)
     def redo_command():
-        pass
+         redo(wtext)
     def cut_command():
-            pass
+         cut(wtext)
     def copy_command():
-         pass
+         copy(wtext)
     def paste_command():
-         pass
+         paste(wtext)
     edit_menu=Menu(wpad_menu)
     wpad_menu.add_cascade(label="Edit",menu=edit_menu)
     edit_menu.add_command(label="Undo",command=undo_command)
