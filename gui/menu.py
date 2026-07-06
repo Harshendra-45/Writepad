@@ -12,6 +12,7 @@ from operations.edit import (
     select_all,
     delete
 )
+from operations.dark_mode import dark_mode
 def menu(window,wtext,label):
     wpad_menu  = Menu(window)
     window.config(menu=wpad_menu)
@@ -59,13 +60,13 @@ def menu(window,wtext,label):
     edit_menu.add_command(label="Paste",command=paste_command)
 
     #Menu view item
-    def white_command():
-         pass
+    def dark_command():
+         dark_mode(window,wtext,label)
     def zoom_command():
          pass
     view_menu=Menu(wpad_menu)
     wpad_menu.add_cascade(label="View",menu=view_menu)
-    view_menu.add_command(label="White mode",command=white_command)
+    view_menu.add_command(label="Dark mode",command=dark_command)
     view_menu.add_separator()
     view_menu.add_command(label="Zoom",command=zoom_command)
     
